@@ -4,34 +4,206 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-	<link rel="stylesheet" href="./css/reset.css">
-	<link rel="stylesheet" href="./css/navbar.css">
+	<title>Amazon</title>
+	<link rel="icon" href="./assets/logo.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+		integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-	<header>
-		<nav class="nav__container">
-			<div class="navbar__logo">
-				<img width="90" height="40" src="./assets/amazonlogo.png" alt="navbar logo">
+	<header class="header">
+		<nav class="navbar">
+			<div class="navbar__left">
+				<img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon Logo" class="logo">
+				<span onclick="modalShow()" class="delivery">Deliver to <strong><i class="fa-solid fa-location-dot"
+							style="color: #fafafa;"></i> Uzbekistan</strong></span>
 			</div>
-			<div class="delivery">
-				<img src="" alt="">
-				<div class="delivery__content">
-					<span>Deliver to</span>
-					<strong>Uzbekistan</strong>
+
+			<div class="navbar__center">
+				<div class="search-bar">
+					<select class="search-category">
+						<option value="all">All</option>
+					</select>
+					<input type="text" class="search-input" placeholder="Search Amazon">
+					<button class="search-btn"><i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></button>
 				</div>
 			</div>
-			<div class="input">
-				<input type="text">
-				<button><img src="" alt=""></button>
-			</div>
 
+			<div class="navbar__right">
+				<a href="#" class="navbar__link"> <img class="navbar__right-image" src="./assets/eng.png" alt="">EN</a>
+				<a href="#" class="navbar__link">Hello, sign in</a>
+				<a href="#" class="navbar__link">Returns & Orders</a>
+				<a href="#" class="navbar__cart">
+					<span class="cart-count">0</span>
+					<i class="fa-solid fa-cart-shopping" style="color: #f4f5f5; font-size: 25px;"></i>
+				</a>
+			</div>
 		</nav>
 	</header>
+	<div class="sub-navbar">
+		<div class="sub-navbar__container">
+			<ul class="sub-navbar__list">
+				<li><a href="#" onclick="showSidebar()" style="font-weight: 600;"><i class="fa-solid fa-bars"
+							style="color: #fafcff; font-size: 16px;"></i> All</a></li>
+				<li><a href="#">Today's Deals</a></li>
+				<li><a href="#">Customer Service</a></li>
+				<li><a href="#">Registry</a></li>
+				<li><a href="#">Gift Cards</a></li>
+				<li><a href="#">Sell</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="modal">
+		<div class="modal__wrapper">
+			<h4 class="modal__info">Choose your location</h4>
+			<button onclick="modalClose()" class="modal__btn"><i class="fa-solid fa-xmark"></i></button>
+		</div>
+
+		<p class="modal__title">Delivery options and delivery speeds may vary for different locations</p>
+		<button class="modal__sign">Sign in to see address</button>
+
+		<input class="modal__input" type="text" required>
+		<button class="modal__apply">Apply</button>
+
+		<button class="modal__submit">Done</button>
+	</div>
+
+	<div class="sidebar">
+		<button onclick="closeSidebar()" class="sidebar__btn"><i class="fa-regular fa-circle-xmark"></i></button>
+		<ul>
+			<h4 class="sidebar__title" id="topId">Digital Content & Devices</h4>
+			<li class="sidebar__item">
+				<a href="#">Amazon Music</a>
+			</li>
+			<li class="sidebar__item">
+				<a href="#">Kindle E-readers & Books</a>
+			</li>
+			<li class="sidebar__item">
+				<a href="#">Amazon AppStore</a>
+			</li>
+
+			<h4 class="sidebar__title">Shop by Department</h4>
+			<li class="sidebar__item">
+				<a href="#">Electronics</a>
+			</li>
+			<li class="sidebar__item">
+				<a href="#">Computers</a>
+			</li>
+			<li class="sidebar__item">
+				<a href="#">Smart Home</a>
+			</li>
+			<li class="sidebar__item">
+				<a href="#">Arts & Crafts</a>
+			</li>
+			<li class="sidebar__item">
+				<a href="#">See all</a>
+			</li>
+
+			<h4 class="sidebar__title">Programs & Features</h4>
+			<li class="sidebar__item">
+				<a href="#">Gift Cards</a>
+			</li>
+			<li class="sidebar__item">
+				<a href="#">Shop by interest</a>
+			</li>
+			<li class="sidebar__item">
+				<a href="#">Amazon live</a>
+			</li>
+			<li class="sidebar__item">
+				<a href="#">International Shopping</a>
+			</li>
+			<li class="sidebar__item">
+				<a href="#">See all</a>
+			</li>
+		</ul>
+	</div>
+
+	<section class="hero">
+		<div class="hero__image">
+			<div class="container">
+				<img src="./assets/image.png" alt="Hero Image">
+			</div>
+		</div>
+	</section>
+
+	<section class="product">
+		<div class="container">
+			<div class="product__wrapper">
+				<div class="product__box">
+					<div>
+						<h4 class="left">Gaming</h4>
+						<img class="product__image" src="./assets/na.png" alt="image">
+						<p class="title">Headsets</p>
+					</div>
+					<div>
+						<h4 class="right">accessories</h4>
+						<img class="product__image" src="./assets/keyboard.png" alt="image">
+						<p class="title">Keyboards</p>
+					</div>
+					<div>
+						<img class="product__image" src="./assets/mouse.png" alt="image">
+						<p class="title">Computer mice</p>
+					</div>
+					<div>
+						<img class="product__image" src="./assets/chair.png" alt="image">
+						<p class="title">Chairs</p>
+					</div>
+
+					<a href="#" class="link">See more</a>
+				</div>
+				<div class="product__box">
+					<div>
+						<h4 class="left">Shop for your</h4>
+						<img class="product__image" src="./assets/cleaning.png" alt="image">
+						<p class="title">Cleaning tools</p>
+					</div>
+					<div>
+						<h4 class="right" style="translate: -15px -10px;">home essenti</h4>
+						<img class="product__image" src="./assets/home.png" alt="image">
+						<p class="title">Home Storage</p>
+					</div>
+					<div>
+						<img class="product__image" src="./assets/decor.png" alt="image">
+						<p class="title">Home Decor</p>
+					</div>
+					<div>
+						<img class="product__image" src="./assets/bedding.png" alt="image">
+						<p class="title">Bedding</p>
+					</div>
+
+					<a href="#" class="link">Discover more in Home</a>
+				</div>
+				<div class="product__box">
+					<div>
+						<h4 class="left">Top categories</h4>
+						<img class="product__image" width="140px" height="90px" src="./assets/cooker.png" alt="image">
+						<p class="title">Cooker</p>
+					</div>
+					<div>
+						<h4 class="right" style="translate: -10px -10px;">in Kitchen</h4>
+						<img class="product__image" width="140px" height="90px" src="./assets/blend.png" alt="image">
+						<p class="title">Coffee</p>
+					</div>
+					<div>
+						<img class="product__image" width="140px" height="90px" src="./assets/post.png" alt="image">
+						<p class="title">Pots and Pans</p>
+					</div>
+					<div>
+						<img class="product__image" width="140px" height="90px" src="./assets/kale.png" alt="image">
+						<p class="title">Kettles</p>
+					</div>
+
+					<a href="#" class="link">Explore all products</a>
+				</div>
+			</div>
+		</div>
+	</section>
 
 
-
+	<script src="./app.js"></script>
 </body>
 
 </html>
